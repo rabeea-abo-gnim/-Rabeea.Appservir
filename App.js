@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const userModule = require("./api/moduls/userModule");
 //const StudentModule = require("./modules/student.modules");
 const app =express();
 app.use(express.json());
@@ -27,7 +28,7 @@ module.exports=app
     // } catch (error) {
     //   console.log("get all students error: ", e);
     // }
-    StudentModule.find()
+    userModule.find()
       .then((stRes) => {
         console.log("");
         res.status(200).json({
